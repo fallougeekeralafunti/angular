@@ -1,0 +1,81 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header row card-header-danger">
+                        <div class="col-md-6 pull-right">
+                            <h4 class="card-title ">boats</h4>
+                            <p class="card-category"> boat list</p>
+                        </div>
+                        <div class=" col-md-6 pull-left" style="text-align: right;">
+                            <button mat-raised-button type="button" (click)="openDialogAddBoat()" 
+                                class="btn btn-success btn-just-icon">
+                                <i class="material-icons">add</i>
+                            </button>
+
+                        </div>
+
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead class=" text-primary">
+                                    <th>
+                                        ID
+                                    </th>
+                                    <th>
+                                        Image
+                                    </th>
+                                    <th>
+                                        Name
+                                    </th>
+                                    <th class="td-actions text-center">
+                                        Action
+                                    </th>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let boat of boats">
+                                        <td>
+                                            {{boat.boat_id}}
+                                        </td>
+                                        <td>
+                                            <button mat-raised-button type="button"
+                                                class="btn btn-white btn-round btn-just-icon">
+                                                <img width="110%" height="110%" src="./assets/img/faces/cr.jpg">
+
+                                            </button>
+
+                                        </td>
+                                        <td>
+                                            {{boat.boat_name | titlecase}}
+                                        </td>
+
+                                        <td class="td-actions text-center">
+                                            <button mat-raised-button type="button" (click)="openDialogViewBoat(boat)"
+                                                matTooltip="Detail Movie" [matTooltipPosition]="'above'"
+                                                class="btn btn-info btn-link btn-sm btn-just-icon">
+                                                <i class="material-icons">visibility</i>
+                                            </button>
+                                            <button mat-raised-button type="button" (click)="openDialogEditBoat(Boat)"
+                                                matTooltip="Edit Movie" [matTooltipPosition]="'above'"
+                                                class="btn btn-primary btn-link btn-sm btn-just-icon">
+                                                <i class="material-icons">edit</i>
+                                            </button>
+                                            <button mat-raised-button type="button"
+                                                (click)="openDialogDeleteBoat(movie?.mov_id)" matTooltip="Remove"
+                                                [matTooltipPosition]="'above'"
+                                                class="btn btn-danger btn-link btn-sm btn-just-icon">
+                                                <i class="material-icons">close</i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

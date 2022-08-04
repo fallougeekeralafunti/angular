@@ -1,0 +1,69 @@
+<div class="main-content">
+  <div class="container-fluid">
+      <div class="row">
+          <div class="col-md-12">
+              <div class="card">
+                  <div class="card-header card-header-danger">
+                    <div class="justify-content-end" style="text-align: right;">
+                        <button mat-raised-button type="button" (click)="openDialogAddCategory()"  class="btn btn-success btn-just-icon">
+                            <i class="material-icons">add</i>
+                        </button>
+                       
+                    </div>
+                      <h4 class="card-title ">categorys</h4>
+                      <p class="card-category"> category list</p>
+                  </div>
+                  <div class="card-body">
+                      <div class="table-responsive">
+                          <table class="table">
+                              <thead class=" text-primary">
+                                  <th>
+                                      ID
+                                  </th>
+                                  <th>
+                                      Name
+                                  </th>
+                                  <th>
+                                      Description
+                                  </th>
+                                  <th class="td-actions text-center">
+                                      Action
+                                  </th>
+                              </thead>
+                              <tbody>
+                                  <tr *ngFor="let category of categorys">
+                                      <td>
+                                          {{category.cat_id}}
+                                      </td>
+                                      <td>
+                                          {{category.cat_name}}
+                                      </td>
+                                      <td>
+                                          {{category.cat_description}}
+                                      </td>
+                                      <!-- <td>
+                                        <span class="material-icons">
+                                            visibility
+                                            </span>
+                                      </td> -->
+                                      <td class="td-actions text-center">
+                                        <button mat-raised-button type="button" (click)="openDialogViewCategory(category)" matTooltip="Detail category" [matTooltipPosition]="'above'" class="btn btn-info btn-link btn-sm btn-just-icon">
+                                            <i class="material-icons">visibility</i>
+                                        </button>
+                                        <button mat-raised-button type="button" (click)="openDialogEditCategory(category)" matTooltip="Edit category" [matTooltipPosition]="'above'" class="btn btn-primary btn-link btn-sm btn-just-icon">
+                                            <i class="material-icons">edit</i>
+                                        </button>
+                                        <button mat-raised-button type="button" (click)="openDialogDeleteCategory(category.cat_id)" matTooltip="Remove" [matTooltipPosition]="'above'" class="btn btn-danger btn-link btn-sm btn-just-icon">
+                                            <i class="material-icons">close</i>
+                                        </button>
+                                    </td>
+                                  </tr>
+                              </tbody>
+                          </table>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>

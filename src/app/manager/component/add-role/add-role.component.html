@@ -1,0 +1,40 @@
+<!-- <div class="main-content">
+    <div class="container-fluid"> -->
+        <div class="card">
+            <div class="card-header card-header-danger">
+                <div class="justify-content-end" style="text-align: right;">
+                    <button mat-raised-button type="button" (click)="closeDialog()"  class="btn btn-link btn-just-icon">
+                        <i class="material-icons">close</i>
+                    </button>
+                   
+                </div>
+                <h4 class="card-title">Add Role</h4>
+                <!-- <p class="card-category">Complete your profile</p> -->
+            </div>
+            <div class="card-body">
+                <form [formGroup]="roleForm">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <mat-form-field class="example-full-width">
+                                <input formControlName="rol_name" matInput placeholder="Role Name" type="text">
+                                <mat-error>Role name is invalid</mat-error>
+                                <!-- <mat-label><i class="material-icons ">edit</i></mat-label> -->
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <mat-form-field class="example-full-width">
+                                <textarea formControlName="rol_description" matInput placeholder="Description"></textarea>
+                                <mat-error>Description is invalid</mat-error>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <button mat-raised-button type="reset" (click)="closeDialog()"  class="btn btn-default pull-left">cancel</button>
+                    <button mat-raised-button type="submit" (click)="onSubmitForm()" [disabled]="!roleForm.valid" class="btn btn-success pull-right">Submit</button>
+                    <div class="clearfix"></div>
+                </form>
+            </div>
+        </div>
+    <!-- </div>
+</div> -->

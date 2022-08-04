@@ -1,0 +1,97 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="justify-content-end" style="text-align: right;">
+            <button mat-raised-button type="button" (click)="openDialogAddUser()"  class="btn btn-success btn-just-icon">
+                <i class="material-icons">add</i>
+            </button>
+           
+        </div>
+        <div class="row">
+                      <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title ">Users</h4>
+                        <p class="card-category"> List users</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead class=" text-primary">
+                                    <th>
+                                        ID
+                                    </th>
+                                    <th>
+                                        First Name
+                                    </th>
+                                    <th>
+                                        Email
+                                    </th>
+                                    <th>
+                                        Role
+                                    </th>
+                                    <th>
+                                        Action
+                                    </th>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let user of users">
+                                      <td>
+                                          {{user?.usr_id}}
+                                      </td>
+                                      <td>
+                                          {{user?.usr_firstName}}
+                                      </td>
+                                      <td>
+                                          {{user?.usr_email}}
+                                      </td>
+                                      <td>
+                                        {{user?.role?.rol_name}}
+                                    </td>
+                                      <!-- <td>
+                                        <span class="material-icons">
+                                            visibility
+                                            </span>
+                                      </td>
+                                  </tr>
+                                    <tr>
+                                        <td>
+                                            1
+                                        </td>
+                                        <td>
+                                            Asse Gueye
+                                        </td>
+                                        <td>
+                                             Gueye
+                                        </td>
+                                        <td>
+                                            sama role
+                                        </td> -->
+                                        <td>
+                                           
+                                            <button mat-raised-button type="button"(click)="openDialogViewUser(user)" matTooltip="Detail Role"   class="btn btn-success btn-link  btn-just-icon">
+                                                <i class="material-icons " > visibility</i>
+                                            </button>
+                                            <button mat-raised-button type="button" (click)="openDialogUpdateUser(user)" matTooltip="Edit"  class="btn btn-primary btn-link  btn-just-icon">
+                                                <i class="material-icons" > edit</i>
+                                            </button>
+                                            <button mat-raised-button type="button" (click)="openDialogDeleteUser(user.usr_id)" matTooltip="Remove"   class="btn  btn-danger btn-link btn-just-icon">
+                                                <i class="material-icons "> delete</i>
+                                            </button>
+                                            <button mat-raised-button *ngIf="user?.usr_isBlocked" type="button" (click)="openDialogUnLockUser(user.usr_id)" matTooltip="debloquer"  class="btn  btn-danger btn-link btn-just-icon">
+                                                <i class="material-icons "> lock</i>
+                                            </button>
+                                            <button mat-raised-button  *ngIf="!user?.usr_isBlocked" type="button" (click)="openDialogLockUser(user.usr_id)" matTooltip="bloquer"   class="btn  btn-success btn-link btn-just-icon">
+                                                <i class="material-icons "> lock_open</i>
+                                            </button>
+                                            
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

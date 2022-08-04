@@ -1,0 +1,84 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-8">
+        <div class="card">
+          <div class="card-header card-header-danger">
+            <h4 class="card-title">Update Movie</h4>
+          </div>
+
+          <div class="card-body">
+            <form [formGroup]="boatForm">
+              <div class="row">
+
+                <div class="col-md-5">
+                  <mat-form-field class="example-full-width">
+                    <input matInput formControlName="mov_title" placeholder="Title">
+                  </mat-form-field>
+                </div>
+                <div class="col-md-4">
+                  <mat-form-field class="example-full-width">
+                    <input matInput formControlName="mov_trailer" placeholder="Trailer" type="text">
+                  </mat-form-field>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <mat-form-field class="example-full-width">
+                    <input matInput formControlName="mov_reference" placeholder="Reference" type="text">
+                  </mat-form-field>
+                </div>
+                <div class="col-md-6">
+                  <mat-form-field class="example-full-width">
+                    <input matInput formControlName="mov_author" placeholder="Author" type="text">
+                  </mat-form-field>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <mat-form-field class="example-full-width">
+                    <input matInput formControlName="mov_duration" placeholder="Duration" type="text">
+                  </mat-form-field>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-4">
+                  <mat-form-field appearance="fill" class="example-full-width">
+                    <mat-label>Classification</mat-label>
+                    <mat-select formControlName="mov_classification">
+                      <mat-option value="SHORT_FILM"> SHORT_FILM</mat-option>
+                      <mat-option value="FEATURE_FILM"> FEATURE_FILM</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <label>Description</label>
+                  <mat-form-field class="example-full-width">
+                    <textarea formControlName="mov_description" matInput></textarea>
+                  </mat-form-field>
+                </div>
+              </div>
+              <button mat-raised-button type="reset" class="btn btn-default pull-left">cancel</button>
+              <button mat-raised-button type="submit" (click)="onSubmitForm()" [disabled]="!boatForm.valid" class="btn btn-success pull-right">Submit</button>
+              <div class="clearfix"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card card-profile">
+          <div class="card-avatar">
+            <img class="img" [src]="url">
+          </div>
+          <div class="card-body">
+            <input type="file"  accept="image/*" name="image" id="file" (change)="onFileChange($event)" style="display: none;">
+            <label for="file" style="cursor: pointer;text-align: center;color: black;">Upload Image</label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

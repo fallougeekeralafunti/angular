@@ -1,0 +1,69 @@
+<div class="main-content">
+  <div class="container-fluid">
+      <div class="row">
+          <div class="col-md-12">
+              <div class="card">
+                  <div class="card-header card-header-danger">
+                    <div class="justify-content-end" style="text-align: right;">
+                        <button mat-raised-button type="button" (click)="openDialogAddRole()"  class="btn btn-success btn-just-icon">
+                            <i class="material-icons">add</i>
+                        </button>
+                       
+                    </div>
+                      <h4 class="card-title ">Roles</h4>
+                      <p class="card-category"> Role list</p>
+                  </div>
+                  <div class="card-body">
+                      <div class="table-responsive">
+                          <table class="table">
+                              <thead class=" text-primary">
+                                  <th>
+                                      ID
+                                  </th>
+                                  <th>
+                                      Name
+                                  </th>
+                                  <th>
+                                      Description
+                                  </th>
+                                  <th class="td-actions text-center">
+                                      Action
+                                  </th>
+                              </thead>
+                              <tbody>
+                                  <tr *ngFor="let role of roles">
+                                      <td>
+                                          {{role.rol_id}}
+                                      </td>
+                                      <td>
+                                          {{role.rol_name}}
+                                      </td>
+                                      <td>
+                                          {{role.rol_description}}
+                                      </td>
+                                      <!-- <td>
+                                        <span class="material-icons">
+                                            visibility
+                                            </span>
+                                      </td> -->
+                                      <td class="td-actions text-center">
+                                        <button mat-raised-button type="button" (click)="openDialogViewRole(role)" matTooltip="Detail Role" [matTooltipPosition]="'above'" class="btn btn-info btn-link btn-sm btn-just-icon">
+                                            <i class="material-icons">visibility</i>
+                                        </button>
+                                        <button mat-raised-button type="button" (click)="openDialogEditRole(role)" matTooltip="Edit Role" [matTooltipPosition]="'above'" class="btn btn-primary btn-link btn-sm btn-just-icon">
+                                            <i class="material-icons">edit</i>
+                                        </button>
+                                        <button mat-raised-button type="button" (click)="openDialogDeleteRole(role.rol_id)" matTooltip="Remove" [matTooltipPosition]="'above'" class="btn btn-danger btn-link btn-sm btn-just-icon">
+                                            <i class="material-icons">close</i>
+                                        </button>
+                                    </td>
+                                  </tr>
+                              </tbody>
+                          </table>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
